@@ -1,0 +1,74 @@
+{
+  "rootStyleVars": [
+    "--global-bg-page-default",
+    "--global-bg-pageAlt-default",
+    "--global-bg-base-default",
+    "--global-bg-base-hover",
+    "--global-bg-base-pressed",
+    "--global-bg-baseAlt-default",
+    "--global-bg-baseAlt-hover",
+    "--global-bg-baseAlt-pressed",
+    "--global-bg-elevated-default",
+    "--global-bg-elevated-hover",
+    "--global-bg-elevated-pressed",
+    "--global-content-regular-default",
+    "--global-content-regular-hover",
+    "--global-content-regular-pressed",
+    "--global-content-muted-default",
+    "--global-content-muted-hover",
+    "--global-content-muted-pressed",
+    "--global-content-inverted-default",
+    "--global-content-inverted-hover",
+    "--global-content-inverted-pressed",
+    "--global-content-invertedMuted-default",
+    "--global-content-invertedMuted-hover",
+    "--global-content-invertedMuted-pressed",
+    "--global-primary-action-default",
+    "--global-primary-action-hover",
+    "--global-primary-action-pressed",
+    "--global-primary-onAction-default",
+    "--global-primary-onAction-hover",
+    "--global-primary-onAction-pressed",
+    "--global-primary-muted-default",
+    "--global-primary-muted-hover",
+    "--global-primary-muted-pressed",
+    "--global-primary-onMuted-default",
+    "--global-primary-onMuted-hover",
+    "--global-primary-onMuted-pressed",
+    "--global-secondary-action-default",
+    "--global-secondary-action-hover",
+    "--global-secondary-action-pressed",
+    "--global-secondary-onAction-default",
+    "--global-secondary-onAction-hover",
+    "--global-secondary-onAction-pressed",
+    "--global-secondary-muted-default",
+    "--global-secondary-muted-hover",
+    "--global-secondary-muted-pressed",
+    "--global-secondary-onMuted-default",
+    "--global-secondary-onMuted-hover",
+    "--global-secondary-onMuted-pressed",
+    "--global-success-action-default",
+    "--global-success-action-hover",
+    "--global-success-action-pressed",
+    "--global-constant-black-default",
+    "--global-constant-white-default"
+  ],
+  "additionalStyles": {
+    "*": {
+      "transition": "color, background, background-color 0.2s ease-in-out"
+    },
+    "mark": {
+      "color": "var(--global-content-regular-default)"
+    },
+    "input": {
+      "background": "none",
+      "color": "var(--global-content-regular-default)"
+    },
+    "button[data-tag=\"file-upload-button\"]": {
+      "color": "var(--global-content-regular-default)"
+    },
+    "button[data-tag=\"file-upload-button\"] svg": {
+      "fill": "var(--global-content-regular-default)"
+    }
+  }
+}

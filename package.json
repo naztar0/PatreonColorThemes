@@ -1,0 +1,23 @@
+{
+  "name": "patreon-themes",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.18",
+    "@types/chrome": "^0.0.246",
+    "@types/node": "^20.6.5",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint": "^8.50.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  }
+}

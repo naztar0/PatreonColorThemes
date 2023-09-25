@@ -1,0 +1,135 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+:root {
+  --primary: #646cff;
+
+  --black: #000;
+  --white: #fff;
+
+  --grey98: hsl(0, 0%, 98%);
+  --grey75: hsl(0, 0%, 75%);
+  --grey50: hsl(0, 0%, 50%);
+  --grey35: hsl(0, 0%, 35%);
+  --grey25: hsl(0, 0%, 25%);
+  --grey15: hsl(0, 0%, 15%);
+  --grey12: hsl(0, 0%, 12.5%);
+  --grey10: hsl(0, 0%, 10%);
+  --grey07: hsl(0, 0%, 7.5%);
+
+  --black75: color-mix(in srgb, var(--black), transparent 25%);
+
+  --text-light: var(--white);
+  --text-dark: var(--black75);
+  --text-link: var(--primary);
+
+  --bg-root-light: #fff;
+  --bg-root-dark: #191c1f;
+  --bg-substrate-light: color-mix(in srgb, var(--bg-root-light) 92%, var(--black));
+  --bg-substrate-dark: color-mix(in srgb, var(--bg-root-dark) 95%, var(--grey75));
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  'Segoe UI Symbol';
+  color: var(--text-dark);
+  padding: 0;
+  margin: 0;
+  min-width: 325px;
+  position: relative;
+  font-size: 15px;
+  background: var(--bg-root-light);
+  user-select: none;
+}
+
+a {
+  outline: none;
+  color: var(--primary);
+}
+
+#title a {
+  color: var(--text-link);
+}
+
+#header {
+  padding: 15px;
+  transition: background, color 0.5s ease-out;
+}
+
+.group {
+  padding: 10px 0;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--bg-substrate-light);
+  }
+}
+
+.menuOption {
+  line-height: 2em;
+  font-size: 16px;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 0 15px;
+
+  &:hover .optionText {
+    text-decoration: underline;
+  }
+}
+
+select {
+  width: 100%;
+  border: 1px solid var(--grey50);
+  border-radius: 5px;
+  background-color: var(--bg-substrate-light);
+  padding: 10px;
+  font-size: 16px;
+  color: var(--text-dark);
+  transition: all ease-out 0.5s;
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--bg-substrate-light) 92%, var(--black));
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+
+  & option:checked {
+    background-color: #ddd;
+    color: var(--primary);
+  }
+}
+
+.dark {
+  #header {
+    background: var(--bg-root-dark);
+    color: var(--text-light);
+  }
+  & .group {
+    background: var(--bg-substrate-dark);
+    border-color: var(--bg-substrate-dark);
+  }
+  & .selectableIcons:hover {
+    background: color-mix(in srgb, var(--bg-substrate-dark) 92%, var(--white));
+    transition: all ease-out 0.5s;
+  }
+  & select {
+    background-color: var(--bg-substrate-dark);
+    border-color: var(--grey75);
+    color: var(--text-light);
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--bg-substrate-dark) 92%, var(--white));
+    }
+  }
+}
