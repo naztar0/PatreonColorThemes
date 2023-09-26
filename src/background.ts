@@ -6,7 +6,7 @@ import './inject.css';
 
 let colorTheme: string | null = null;
 const defaultTheme = 'dark';
-const pathExceptions = ['product', 'c', 'explore', 'apps', 'policy', 'pricing'];
+const pathExceptions = ['', 'product', 'c', 'explore', 'apps', 'policy', 'pricing'];
 
 const extractStyles = (styles: { [k1: string]: { [k2: string]: string } }) => {
   const styleList: string[] = [];
