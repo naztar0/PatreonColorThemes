@@ -4,7 +4,7 @@
   "description": "Extension for applying custom color themes to Patreon",
   "version": "1.1.0",
   "author": "Neulen",
-  "homepage_url": "https://patreon.com",
+  "homepage_url": "https://github.com/naztar0/PatreonColorThemes",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
