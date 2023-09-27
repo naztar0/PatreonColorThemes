@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Patreon Color Themes",
   "description": "Extension for applying custom color themes to Patreon",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "Neulen",
   "homepage_url": "https://github.com/naztar0/PatreonColorThemes",
   "icons": {
