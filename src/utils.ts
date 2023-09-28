@@ -136,8 +136,8 @@ export const sendMessage = (data: { [key: string]: any }) => {
 };
 
 export const getThemeName = (theme: Theme) => {
-  const names = ['Light', 'Light Warm', 'Dark', 'Dark Dimmed', 'Dark High Contrast', 'Dark Warm', 'Dark Cool'];
-  return names[theme];
+  const names = ['light', 'light_warm', 'dark', 'dark_dimmed', 'dark_high_contrast', 'dark_warm', 'dark_cool'];
+  return chrome.i18n.getMessage(`theme_${names[theme]}`);
 };
 
 export const getThemesValues = () => THEMES.map((theme) => ({ value: theme, name: getThemeName(theme) }));

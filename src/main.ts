@@ -12,7 +12,7 @@ import './style.css';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div id="header">
-    <span id="title">Change the color theme</span>
+    <span id="title">${chrome.i18n.getMessage('change_theme')}</span>
   </div>
   <div id="popupContent">
   <div class="group">
