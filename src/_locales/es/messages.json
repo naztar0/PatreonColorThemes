@@ -1,0 +1,13 @@
+{
+  "extension_name": { "message": "Temas de Color de Patreon" },
+  "extension_description": { "message": "Extensión para aplicar temas de color personalizados a Patreon" },
+  "extension_default_title": { "message": "Temas de Color de Patreon" },
+  "change_theme": { "message": "Cambiar tema de color" },
+  "theme_light": { "message": "Claro" },
+  "theme_light_warm": { "message": "Claro Cálido" },
+  "theme_dark": { "message": "Oscuro" },
+  "theme_dark_dimmed": { "message": "Oscuro Atenuado" },
+  "theme_dark_high_contrast": { "message": "Oscuro Alto Contraste" },
+  "theme_dark_warm": { "message": "Oscuro Cálido" },
+  "theme_dark_cool": { "message": "Oscuro Fresco" }
+}

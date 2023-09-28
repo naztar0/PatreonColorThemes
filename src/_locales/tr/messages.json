@@ -1,0 +1,13 @@
+{
+  "extension_name": { "message": "Patreon Renk Temaları" },
+  "extension_description": { "message": "Patreon'a özel renk temaları uygulamak için bir eklenti" },
+  "extension_default_title": { "message": "Patreon Renk Temaları" },
+  "change_theme": { "message": "Renk temasını değiştir" },
+  "theme_light": { "message": "Açık" },
+  "theme_light_warm": { "message": "Açık Sıcak" },
+  "theme_dark": { "message": "Koyu" },
+  "theme_dark_dimmed": { "message": "Koyu Sönük" },
+  "theme_dark_high_contrast": { "message": "Koyu Yüksek Kontrast" },
+  "theme_dark_warm": { "message": "Koyu Sıcak" },
+  "theme_dark_cool": { "message": "Koyu Soğuk" }
+}

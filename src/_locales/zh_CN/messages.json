@@ -1,0 +1,13 @@
+{
+  "extension_name": { "message": "Patreon 色彩主题" },
+  "extension_description": { "message": "用于在 Patreon 上应用自定义色彩主题的扩展" },
+  "extension_default_title": { "message": "Patreon 色彩主题" },
+  "change_theme": { "message": "更改色彩主题" },
+  "theme_light": { "message": "明亮" },
+  "theme_light_warm": { "message": "明亮温暖" },
+  "theme_dark": { "message": "暗黑" },
+  "theme_dark_dimmed": { "message": "暗黑降低亮度" },
+  "theme_dark_high_contrast": { "message": "暗黑高对比度" },
+  "theme_dark_warm": { "message": "暗黑温暖" },
+  "theme_dark_cool": { "message": "暗黑冷色" }
+}

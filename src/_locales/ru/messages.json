@@ -1,0 +1,13 @@
+{
+  "extension_name": { "message": "Цветовые темы Patreon" },
+  "extension_description": { "message": "Расширение для применения кастомных цветовых тем на Patreon" },
+  "extension_default_title": { "message": "Цветовые темы для Patreon" },
+  "change_theme": { "message": "Изменить цветовую тему" },
+  "theme_light": { "message": "Светлая" },
+  "theme_light_warm": { "message": "Светлая Теплая" },
+  "theme_dark": { "message": "Темная" },
+  "theme_dark_dimmed": { "message": "Темная Тусклая" },
+  "theme_dark_high_contrast": { "message": "Темная Контрастная" },
+  "theme_dark_warm": { "message": "Темная Теплая" },
+  "theme_dark_cool": { "message": "Темная Холодная" }
+}
