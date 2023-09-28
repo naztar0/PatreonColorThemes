@@ -1,0 +1,13 @@
+{
+  "extension_name": { "message": "Колірні теми для Patreon" },
+  "extension_description": { "message": "Розширення для застосування власних колірних тем на Patreon" },
+  "extension_default_title": { "message": "Колірні теми для Patreon" },
+  "change_theme": { "message": "Змінити колірну тему" },
+  "theme_light": { "message": "Світла" },
+  "theme_light_warm": { "message": "Світла Тепла" },
+  "theme_dark": { "message": "Темна" },
+  "theme_dark_dimmed": { "message": "Темна Тьмяна" },
+  "theme_dark_high_contrast": { "message": "Темна Контрастна" },
+  "theme_dark_warm": { "message": "Темна Тепла" },
+  "theme_dark_cool": { "message": "Темна Холодна" }
+}

@@ -69,6 +69,14 @@
     },
     "button[data-tag=\"file-upload-button\"] svg": {
       "fill": "var(--global-content-regular-default)"
+    },
+    "div[aria-label=\"Resource Center\"]": {
+      "background-color": "var(--global-bg-base-default)",
+      "box-shadow": "var(--global-boxShadow-mid)"
+    },
+    ".bb-text, #pendo-base div": {
+      "background-color": "var(--global-bg-base-default)",
+      "color": "var(--global-content-regular-default)"
     }
   }
 }

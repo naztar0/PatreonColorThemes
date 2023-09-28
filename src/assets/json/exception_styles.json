@@ -9,7 +9,7 @@
     "div[role=\"main\"] > div:not([data-tag=\"toaster\"]):nth-last-child(2) > div": {
       "background-color": "var(--global-bg-base-default)"
     },
-    ":where(.reactWrapper) span, h1, h2, h3, span div": {
+    ".reactWrapper :where(span, h1, h2, h3, span, div)": {
       "color": "var(--global-content-regular-default)"
     },
     "header": {
@@ -20,16 +20,10 @@
     "header svg": {
       "fill": "var(--global-content-regular-default)"
     },
-    "div[aria-label=\"Footer\"]": {
-      "background-color": "var(--global-primary-muted-default)"
+    "div[aria-label=\"Footer\"] :where(span, a)": {
+      "color": "white"
     },
-    "div[aria-label=\"Footer\"] svg": {
-      "fill": "var(--global-content-regular-default)"
-    },
-    "div[aria-label=\"Footer\"] button": {
-      "color": "var(--global-content-regular-default)"
-    },
-    ":where(header) span, a": {
+    "header :where(span, a)": {
       "color": "var(--global-content-regular-default)"
     },
     "div[class^=\"RichText\"]": {
@@ -53,11 +47,14 @@
     "div[data-tag=\"dropdown-list\"] li:hover": {
       "background-color": "var(--global-bg-elevated-hover)"
     },
-    ":where(div[data-tag=\"dropdown-list\"]) span, p": {
+    "div[data-tag=\"dropdown-list\"] :where(span, p)": {
       "color": "var(--global-content-regular-default)"
     },
     "div[role=\"main\"] > div:nth-child(2) > div:nth-child(4) > div > div > div > div:last-child > div:first-child > div /* pricing page plans banners */": {
       "background-color": "var(--global-bg-elevated-default)",
+      "color": "var(--global-content-regular-default)"
+    },
+    "div[role=\"main\"] > div:nth-child(2) > div:nth-child(4) > div > div > div > div:first-child > div > div div:last-child > div > div": {
       "color": "var(--global-content-regular-default)"
     },
     "div[role=\"main\"] > div:nth-child(2) > div:nth-child(8) /* pricing page payments */": {
@@ -73,6 +70,24 @@
       "background-color": "var(--global-bg-base-default)"
     },
     "div[role=\"main\"] > div:first-child > div:nth-child(2) > div:nth-child(2) li button": {
+      "color": "var(--global-content-regular-default)"
+    },
+    "div[class^=\"Banner_content\"] /* main page */": {
+      "background-color": "var(--global-bg-elevated-default)"
+    },
+    "div[class^=\"Banner_button\"] a": {
+      "background-color": "var(--global-content-regular-default)"
+    },
+    "div[class^=\"Banner_button\"] a div:last-child": {
+      "color": "var(--global-bg-base-default)"
+    },
+    "section[class^=\"Wrapper_root\"] > div:nth-child(2), section[class^=\"Wrapper_root\"] > div:nth-child(3) > div": {
+      "background-color": "var(--global-bg-base-default)"
+    },
+    "section[class^=\"Wrapper_root\"] > div:nth-child(3) > div > div > div:last-child > div > div > div > p": {
+      "color": "var(--global-content-regular-default)"
+    },
+    "div[class^=\"Styles_grid\"] a > div > div:nth-child(2) > p, div[class^=\"Styles_grid\"] a > div > a": {
       "color": "var(--global-content-regular-default)"
     }
   },

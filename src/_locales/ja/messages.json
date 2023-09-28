@@ -1,0 +1,13 @@
+{
+  "extension_name": { "message": "Patreonカラーテーマ" },
+  "extension_description": { "message": "Patreonにカスタムカラーテーマを適用するための拡張機能" },
+  "extension_default_title": { "message": "Patreonカラーテーマ" },
+  "change_theme": { "message": "カラーテーマを変更" },
+  "theme_light": { "message": "ライト" },
+  "theme_light_warm": { "message": "ライトウォーム" },
+  "theme_dark": { "message": "ダーク" },
+  "theme_dark_dimmed": { "message": "ダークディムド" },
+  "theme_dark_high_contrast": { "message": "ダークハイコントラスト" },
+  "theme_dark_warm": { "message": "ダークウォーム" },
+  "theme_dark_cool": { "message": "ダーククール" }
+}
