@@ -1,179 +1,26 @@
 {
   "exceptionStyles": {
-    ".reactWrapper": {
-      "background": "var(--global-bg-base-default)"
-    },
-    "div[role=\"main\"] > div:not([data-tag=\"toaster\"])": {
+    "header > :nth-child(2) > div": {
       "background-color": "var(--global-bg-base-default)"
     },
-    "div[role=\"main\"] > div:not([data-tag=\"toaster\"]):nth-last-child(2) > div": {
-      "background-color": "var(--global-bg-base-default)"
-    },
-    ".reactWrapper :where(span, h1, h2, h3, span, div)": {
+    "header > :nth-child(2) :where(span, a)": {
       "color": "var(--global-content-regular-default)"
     },
-    "header": {
-      "background-color": "var(--global-bg-base-default)",
-      "color": "var(--global-content-regular-default)",
-      "border-bottom": "1px solid var(--global-border-muted-default)"
+    "header .active ~ .header-container": {
+      "color": "var(--global-content-regular-default)"
     },
-    "header svg": {
+    "header .active ~ .header-container span": {
+      "color": "var(--global-content-regular-default)",
+      "opacity": "1"
+    },
+    "header .active ~ .header-container svg": {
       "fill": "var(--global-content-regular-default)"
     },
-    "div[aria-label=\"Footer\"] :where(span, a)": {
-      "color": "white"
+    "header .active ~ .header-container :where(.nav-link, div[data-label=\"Pricing\"]):before": {
+      "display": "none"
     },
-    "header :where(span, a)": {
-      "color": "var(--global-content-regular-default)"
-    },
-    "div[class^=\"RichText\"]": {
-      "color": "var(--global-content-regular-default)"
-    },
-    "form[role=\"search\"] > div": {
-      "background": "var(--global-bg-base-default)",
-      "color": "var(--global-content-regular-default)",
-      "border": "1px solid var(--global-border-action-default)"
-    },
-    "input": {
-      "background": "none"
-    },
-    "input::placeholder": {
-      "color": "var(--global-content-muted-default)"
-    },
-    "div[data-tag=\"dropdown-list\"]": {
-      "background-color": "var(--global-bg-elevated-default)",
-      "color": "var(--global-content-regular-default)"
-    },
-    "div[data-tag=\"dropdown-list\"] li:hover": {
-      "background-color": "var(--global-bg-elevated-hover)"
-    },
-    "div[data-tag=\"dropdown-list\"] :where(span, p)": {
-      "color": "var(--global-content-regular-default)"
-    },
-    "div[role=\"main\"] > div:nth-child(2) > div:nth-child(4) > div > div > div > div:last-child > div:first-child > div /* pricing page plans banners */": {
-      "background-color": "var(--global-bg-elevated-default)",
-      "color": "var(--global-content-regular-default)"
-    },
-    "div[role=\"main\"] > div:nth-child(2) > div:nth-child(4) > div > div > div > div:first-child > div > div div:last-child > div > div": {
-      "color": "var(--global-content-regular-default)"
-    },
-    "div[role=\"main\"] > div:nth-child(2) > div:nth-child(8) /* pricing page payments */": {
-      "background-color": "var(--global-bg-base-default)"
-    },
-    "div[role=\"main\"] > div:nth-child(2) > div:nth-child(8) div": {
-      "color": "var(--global-content-regular-default)"
-    },
-    "div[role=\"main\"] > div:nth-child(2) > div:nth-child(8) svg": {
-      "fill": "var(--global-content-regular-default)"
-    },
-    "div[role=\"main\"] > div:first-child > div:nth-child(2) > div:nth-child(2) /* policy */": {
-      "background-color": "var(--global-bg-base-default)"
-    },
-    "div[role=\"main\"] > div:first-child > div:nth-child(2) > div:nth-child(2) li button": {
-      "color": "var(--global-content-regular-default)"
-    },
-    "div[class^=\"Banner_content\"] /* main page */": {
-      "background-color": "var(--global-bg-elevated-default)"
-    },
-    "div[class^=\"Banner_button\"] a": {
-      "background-color": "var(--global-content-regular-default)"
-    },
-    "div[class^=\"Banner_button\"] a div:last-child": {
-      "color": "var(--global-bg-base-default)"
-    },
-    "section[class^=\"Wrapper_root\"] > div:nth-child(2), section[class^=\"Wrapper_root\"] > div:nth-child(3) > div": {
-      "background-color": "var(--global-bg-base-default)"
-    },
-    "section[class^=\"Wrapper_root\"] > div:nth-child(3) > div > div > div:last-child > div > div > div > p": {
-      "color": "var(--global-content-regular-default)"
-    },
-    "div[class^=\"Styles_grid\"] a > div > div:nth-child(2) > p, div[class^=\"Styles_grid\"] a > div > a": {
-      "color": "var(--global-content-regular-default)"
+    "header .active ~ .header-container :where(.nav-link, div[data-label=\"Pricing\"]):after": {
+      "display": "none"
     }
-  },
-  "exceptionRoot": [
-    "--global-bg-page-hover: #e6e9f0;",
-    "--global-bg-page-pressed: #d8dce5;",
-    "--global-bg-pageAlt-hover: #f6f7fa;",
-    "--global-bg-pageAlt-pressed: #e6e9f0;",
-    "--global-content-invertedSubtle-default: rgba(185,193,218,0.46);",
-    "--global-content-invertedSubtle-hover: rgba(209,215,235,0.6);",
-    "--global-content-invertedSubtle-pressed: rgba(233,237,252,0.7);",
-    "--global-content-subtle-default: rgba(73,80,101,0.5);",
-    "--global-content-subtle-hover: rgba(38,45,64,0.6);",
-    "--global-content-subtle-pressed: rgba(14,18,32,0.7);",
-    "--global-primary-subtle-default: rgba(34,84,159,0.05);",
-    "--global-primary-subtle-hover: rgba(34,84,159,0.1);",
-    "--global-primary-subtle-pressed: rgba(34,84,159,0.2);",
-    "--global-primary-onSubtle-default: #000000;",
-    "--global-primary-onSubtle-hover: rgba(0,0,0,0.9);",
-    "--global-primary-onSubtle-pressed: rgba(0,0,0,0.82);",
-    "--global-primary-highlight-default: #22549f;",
-    "--global-primary-highlight-hover: #183f7b;",
-    "--global-primary-highlight-pressed: #102a52;",
-    "--global-primary-highlightBase-default: #22549f;",
-    "--global-primary-highlightBase-hover: #183f7b;",
-    "--global-primary-highlightBase-pressed: #102a52;",
-    "--global-primary-onHighlightBase-default: rgba(255,255,255,0.96);",
-    "--global-primary-onHighlightBase-hover: rgba(255,255,255,0.9);",
-    "--global-primary-onHighlightBase-pressed: rgba(255,255,255,0.86);",
-    "--global-primary-actionBase-default: #22549f;",
-    "--global-primary-actionBase-hover: #183f7b;",
-    "--global-primary-actionBase-pressed: #102a52;",
-    "--global-primary-onActionBase-default: rgba(255,255,255,0.96);",
-    "--global-primary-onActionBase-hover: rgba(255,255,255,0.9);",
-    "--global-primary-onActionBase-pressed: rgba(255,255,255,0.86);",
-    "--global-success-onAction-default: rgba(255,255,255,0.96);",
-    "--global-success-onAction-hover: rgba(255,255,255,0.9);",
-    "--global-success-onAction-pressed: rgba(255,255,255,0.86);",
-    "--global-success-muted-default: #d9f5e4;",
-    "--global-success-muted-hover: #bcedd5;",
-    "--global-success-muted-pressed: #7be0b1;",
-    "--global-success-onMuted-default: #000000;",
-    "--global-success-onMuted-hover: rgba(0,0,0,0.9);",
-    "--global-success-onMuted-pressed: rgba(0,0,0,0.82);",
-    "--global-warning-action-default: #a83500;",
-    "--global-warning-action-hover: #571900;",
-    "--global-warning-action-pressed: #381000;",
-    "--global-warning-onAction-default: rgba(255,255,255,0.96);",
-    "--global-warning-onAction-hover: rgba(255,255,255,0.9);",
-    "--global-warning-onAction-pressed: rgba(255,255,255,0.86);",
-    "--global-warning-muted-default: #fcefca;",
-    "--global-warning-muted-hover: #fce5a5;",
-    "--global-warning-muted-pressed: #ffda75;",
-    "--global-warning-onMuted-default: #000000;",
-    "--global-warning-onMuted-hover: rgba(0,0,0,0.9);",
-    "--global-warning-onMuted-pressed: rgba(0,0,0,0.82);",
-    "--global-critical-action-default: #e32144;",
-    "--global-critical-action-hover: #be1332;",
-    "--global-critical-action-pressed: #990620;",
-    "--global-critical-onAction-default: rgba(255,255,255,0.96);",
-    "--global-critical-onAction-hover: rgba(255,255,255,0.9);",
-    "--global-critical-onAction-pressed: rgba(255,255,255,0.86);",
-    "--global-critical-muted-default: #f7dee0;",
-    "--global-critical-muted-hover: #ffc2c6;",
-    "--global-critical-muted-pressed: #ff9ea5;",
-    "--global-critical-onMuted-default: #000000;",
-    "--global-critical-onMuted-hover: rgba(0,0,0,0.9);",
-    "--global-critical-onMuted-pressed: rgba(0,0,0,0.82);",
-    "--global-border-action-default: rgba(130,140,171,0.3);",
-    "--global-border-action-hover: rgba(116,126,154,0.4);",
-    "--global-border-action-pressed: rgba(73,80,101,0.5);",
-    "--global-border-muted-default: rgba(141,152,185,0.2);",
-    "--global-border-muted-hover: rgba(130,140,171,0.3);",
-    "--global-border-muted-pressed: rgba(116,126,154,0.4);",
-    "--global-boxShadow-high: 0px 20px 40px 0px rgba(0,0,0,0.04),0px 6px 15px 0px rgba(0,0,0,0.06),0px 1px 5px 0px rgba(0,0,0,0.08);",
-    "--global-boxShadow-mid: 0px 0px 20px 0px rgba(0,0,0,0.04),0px 4px 14px 0px rgba(0,0,0,0.06),0px 1px 5px 0px rgba(0,0,0,0.08);",
-    "--global-boxShadow-low: 0px 1px 4px 0px rgba(0,0,0,0.1),0px 0px 1px 0px rgba(0,0,0,0.1);",
-    "--global-boxShadow-subtle: 0px 1px 4px 0px rgba(0,0,0,0.04),0px 0px 1px 0px rgba(0,0,0,0.04);",
-    "--component-dialog-overlay-bg: rgba(38,45,64,0.6);",
-    "--component-takeover-bg: #ffffff;",
-    "--component-button-action-default: #22549f;",
-    "--component-button-action-hover: #183f7b;",
-    "--component-button-action-pressed: #102a52;",
-    "--component-button-onAction-default: rgba(255,255,255,0.96);",
-    "--component-button-onAction-hover: rgba(255,255,255,0.9);",
-    "--component-button-onAction-pressed: rgba(255,255,255,0.86);",
-    "--temp-chip-primaryBackground: #E2EBF7;"
-  ]
+  }
 }

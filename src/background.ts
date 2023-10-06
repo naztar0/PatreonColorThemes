@@ -46,21 +46,51 @@ const changeTheme = () => {
 
   const styleElement = document.createElement('style');
   styleElement.innerHTML = `:root { ${styleList.join('')} }`;
+  styleElement.innerHTML += `body { ${styleList.join('')} }`;
   document.head.appendChild(styleElement);
 
   // eslint-disable-next-line no-restricted-globals
   if (pathExceptions.includes(location.pathname.split('/')[1])) {
     const exceptionStyleList = extractStyles(excStylesAsset.exceptionStyles);
-    const exceptionRootStyleList = `:root { ${excStylesAsset.exceptionRoot.join('')} }`;
     const exceptionStyleElement = document.createElement('style');
-    exceptionStyleElement.innerHTML = exceptionStyleList.join('') + exceptionRootStyleList;
+    exceptionStyleElement.innerHTML = exceptionStyleList.join('');
     document.head.appendChild(exceptionStyleElement);
   } else {
     const additionalStyleList = extractStyles(stylesAsset.additionalStyles);
+    const additionalRootStyleList = `:root { ${stylesAsset.exceptionRoot.join('')} }`;
     const additionalStyleElement = document.createElement('style');
-    additionalStyleElement.innerHTML = additionalStyleList.join('');
+    additionalStyleElement.innerHTML = additionalStyleList.join('') + additionalRootStyleList;
     setTimeout(() => document.head.appendChild(additionalStyleElement), 100);
+
+    const overriders = [
+      'main > div:first-child',
+      '.reactWrapper > div:first-child',
+      '@div[role="dialog"]',
+      '@div[data-tag="dropdown-list"]',
+    ];
+
+    const updater = () => {
+      overriders.forEach((selector) => {
+        let overrider: HTMLElement | null;
+        if (selector[0] === '@') {
+          overrider = document.querySelector(selector.slice(1))?.parentElement || null;
+        } else {
+          overrider = document.querySelector(selector);
+        }
+        if (overrider) {
+          overrider.className = '';
+        }
+      });
+      setTimeout(updater, 150);
+    };
+    updater();
   }
+};
+
+const changeThemeAnimated = () => {
+  document.body.classList.add('pct-animate');
+  setTimeout(() => document.body.classList.remove('pct-animate'), 500);
+  changeTheme();
 };
 
 const injectUI = () => {
@@ -88,13 +118,13 @@ const injectUI = () => {
       const theme = li.getAttribute('data-theme');
       if (theme) {
         colorTheme = Number(theme) as Theme;
-        changeTheme();
+        changeThemeAnimated();
         chrome.storage.sync.set({ color_theme: colorTheme }).then();
         logEventsInj([{ name: LogType.THEME_CHANGE, params: { theme: getThemeName(colorTheme) } }]);
       }
     });
   });
-  const parent = document.querySelector('nav[aria-label="Patron navigation"] > div:first-child');
+  const parent = document.querySelector('#main-app-navigation nav > div:first-child');
   if (parent) {
     parent.appendChild(toggle);
     parent.appendChild(dropdown);
@@ -118,7 +148,7 @@ chrome.storage.sync.get(['color_theme'], (result) => {
 chrome.runtime.onMessage.addListener((request) => {
   if (request.color_theme !== undefined) {
     colorTheme = THEMES[request.color_theme];
-    changeTheme();
+    changeThemeAnimated();
   }
 });
 
