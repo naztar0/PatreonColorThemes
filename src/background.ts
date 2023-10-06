@@ -49,8 +49,7 @@ const changeTheme = () => {
   styleElement.innerHTML += `body { ${styleList.join('')} }`;
   document.head.appendChild(styleElement);
 
-  // eslint-disable-next-line no-restricted-globals
-  if (pathExceptions.includes(location.pathname.split('/')[1])) {
+  if (pathExceptions.includes(window.location.pathname.split('/')[1])) {
     const exceptionStyleList = extractStyles(excStylesAsset.exceptionStyles);
     const exceptionStyleElement = document.createElement('style');
     exceptionStyleElement.innerHTML = exceptionStyleList.join('');
@@ -61,29 +60,6 @@ const changeTheme = () => {
     const additionalStyleElement = document.createElement('style');
     additionalStyleElement.innerHTML = additionalStyleList.join('') + additionalRootStyleList;
     setTimeout(() => document.head.appendChild(additionalStyleElement), 100);
-
-    const overriders = [
-      'main > div:first-child',
-      '.reactWrapper > div:first-child',
-      '@div[role="dialog"]',
-      '@div[data-tag="dropdown-list"]',
-    ];
-
-    const updater = () => {
-      overriders.forEach((selector) => {
-        let overrider: HTMLElement | null;
-        if (selector[0] === '@') {
-          overrider = document.querySelector(selector.slice(1))?.parentElement || null;
-        } else {
-          overrider = document.querySelector(selector);
-        }
-        if (overrider) {
-          overrider.className = '';
-        }
-      });
-      setTimeout(updater, 150);
-    };
-    updater();
   }
 };
 
@@ -135,6 +111,35 @@ const injectUI = () => {
     }
   });
 };
+
+if (!pathExceptions.includes(window.location.pathname.split('/')[1])) {
+  const overrideOverriders = () => {
+    stylesAsset.overriders.forEach((selector) => {
+      let overriderList: NodeListOf<HTMLElement> | (HTMLElement | null)[];
+      if (selector[0] === '@') {
+        const [query, parentExc] = selector.slice(1).split('!');
+        overriderList = Array.from(document.querySelectorAll(query)).map((e) => {
+          let exception = false;
+          parentExc.split(',').forEach((exc) => {
+            if (e.parentElement?.matches(exc)) {
+              exception = true;
+            }
+          });
+          return exception ? null : e.parentElement;
+        });
+      } else {
+        overriderList = document.querySelectorAll(selector);
+      }
+      overriderList.forEach((e) => {
+        if (e) {
+          e.className = '';
+        }
+      });
+    });
+  };
+  overrideOverriders();
+  document.addEventListener('click', overrideOverriders);
+}
 
 chrome.storage.sync.get(['color_theme'], (result) => {
   if (result.color_theme !== undefined) {
