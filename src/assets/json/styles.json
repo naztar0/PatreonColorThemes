@@ -54,13 +54,14 @@
     "--global-constant-white-default"
   ],
   "additionalStyles": {
-    "*": {
-      "transition": "color, background, background-color 0.2s ease-in-out"
+    ".pct-animate *": {
+      "transition": "background-color 0.2s ease-in-out"
     },
     "mark": {
+      "background-color": "var(--global-bg-base-default)",
       "color": "var(--global-content-regular-default)"
     },
-    "input": {
+    "input:not([name=\"color\"])": {
       "background": "none",
       "color": "var(--global-content-regular-default)"
     },
@@ -78,5 +79,9 @@
       "background-color": "var(--global-bg-base-default)",
       "color": "var(--global-content-regular-default)"
     }
-  }
+  },
+  "exceptionRoot": [
+    "--global-border-action-hover: var(--global-primary-muted-default);",
+    "--global-border-action-default: var(--global-primary-muted-hover);"
+  ]
 }
