@@ -78,10 +78,24 @@
     ".bb-text, #pendo-base div": {
       "background-color": "var(--global-bg-base-default)",
       "color": "var(--global-content-regular-default)"
+    },
+    "span[style*=\"color: rgb(0, 0, 0)\"]": {
+      "color": "var(--global-content-regular-default)"
+    },
+    "div[data-tag=\"launch-banner\"] > div > div": {
+      "background-color": "var(--global-bg-baseAlt-default)"
     }
   },
   "exceptionRoot": [
     "--global-border-action-hover: var(--global-primary-muted-default);",
     "--global-border-action-default: var(--global-primary-muted-hover);"
+  ],
+  "overriders": [
+    "main > div:first-child",
+    "main > div:first-child > div:first-child",
+    ".reactWrapper > div:first-child",
+    "@div[data-tag=\"dropdown-list\"]",
+    "@div[role=\"dialog\"]!div[data-tag=\"account-menu\"]",
+    "@div[data-focus-guard=\"true\"]!.reactWrapper,#Popover-0 > div"
   ]
 }
