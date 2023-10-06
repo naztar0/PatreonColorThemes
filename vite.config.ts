@@ -10,12 +10,5 @@ export default defineConfig({
     alias: {
       '@': join(__dirname, 'src'),
     }
-  },
-  css: {
-    preprocessorOptions: {
-      less: {
-        javascriptEnabled: true,
-      }
-    }
   }
 })
