@@ -97,9 +97,11 @@
   "overriders": [
     "main > div:first-child",
     "main > div:first-child > div:first-child",
+    "main > div:nth-of-type(2)",
     ".reactWrapper > div:first-child",
     "@div[data-tag=\"dropdown-list\"]",
     "@div[role=\"dialog\"]!div[data-tag=\"account-menu\"]",
+    "@div[id^=\"Popover\"]!div",
     "@div[data-focus-guard=\"true\"]!.reactWrapper,#Popover-0 > div"
   ]
 }
