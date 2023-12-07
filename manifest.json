@@ -30,8 +30,9 @@
         "https://www.patreon.com/*"
       ],
       "js": [
-        "src/background.ts"
-      ]
+        "src/inject.ts"
+      ],
+      "run_at": "document_start"
     }
   ]
 }
