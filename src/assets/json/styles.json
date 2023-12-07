@@ -66,7 +66,8 @@
       "color": "var(--global-content-regular-default)"
     },
     "button[data-tag=\"file-upload-button\"]": {
-      "color": "var(--global-content-regular-default)"
+      "color": "var(--global-content-regular-default)",
+      "background-color": "var(--global-bg-elevated-default)"
     },
     "button[data-tag=\"file-upload-button\"] svg": {
       "fill": "var(--global-content-regular-default)"
@@ -84,6 +85,9 @@
     },
     "div[data-tag=\"launch-banner\"] > div > div": {
       "background-color": "var(--global-bg-baseAlt-default)"
+    },
+    "div[color=\"var(--global-bg-base-default)\"]": {
+      "background-image": "linear-gradient(transparent 0%, var(--global-bg-base-default) 100%)"
     }
   },
   "exceptionRoot": [
