@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "__MSG_extension_name__",
   "description": "__MSG_extension_description__",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "author": "Neulen",
   "homepage_url": "https://github.com/naztar0/PatreonColorThemes",
   "default_locale": "en",
