@@ -15,6 +15,7 @@ import './inject.css';
 let colorTheme: Theme | null = null;
 const defaultTheme = Theme.DARK;
 const pathExceptions = ['', 'product', 'c', 'explore', 'apps', 'policy', 'pricing'];
+const bombingLimit = 20;
 
 const extractStyles = (styles: { [k1: string]: { [k2: string]: string } }) => {
   const styleList: string[] = [];
@@ -70,6 +71,9 @@ const changeThemeAnimated = () => {
 };
 
 const injectUI = () => {
+  if (document.getElementById('pct-toggle')) {
+    return;
+  }
   const toggle = document.createElement('div');
   toggle.id = 'pct-toggle';
   toggle.innerHTML = `
@@ -112,33 +116,55 @@ const injectUI = () => {
   });
 };
 
-if (!pathExceptions.includes(window.location.pathname.split('/')[1])) {
-  const overrideOverriders = () => {
-    stylesAsset.overriders.forEach((selector) => {
-      let overriderList: NodeListOf<HTMLElement> | (HTMLElement | null)[];
-      if (selector[0] === '@') {
-        const [query, parentExc] = selector.slice(1).split('!');
-        overriderList = Array.from(document.querySelectorAll(query)).map((e) => {
-          let exception = false;
-          parentExc.split(',').forEach((exc) => {
-            if (e.parentElement?.matches(exc)) {
-              exception = true;
-            }
-          });
-          return exception ? null : e.parentElement;
+const overrideOverriders = () => {
+  stylesAsset.overriders.forEach((selector) => {
+    let overriderList: NodeListOf<HTMLElement> | (HTMLElement | null)[];
+    if (selector[0] === '@') {
+      const [query, parentExc] = selector.slice(1).split('!');
+      overriderList = Array.from(document.querySelectorAll(query)).map((e) => {
+        let exception = false;
+        parentExc?.split(',').forEach((exc) => {
+          if (e.parentElement?.matches(exc)) {
+            exception = true;
+          }
         });
-      } else {
-        overriderList = document.querySelectorAll(selector);
-      }
-      overriderList.forEach((e) => {
-        if (e) {
-          e.className = '';
-        }
+        return exception ? null : e.parentElement;
       });
+    } else {
+      overriderList = document.querySelectorAll(selector);
+    }
+    overriderList.forEach((e) => {
+      if (e) {
+        e.className = '';
+      }
     });
+  });
+};
+
+const setButtonClickListeners = () => {
+  document.querySelectorAll('button').forEach((e) => {
+    e.addEventListener('click', () => {
+      setTimeout(overrideOverriders, 0);
+    });
+  });
+};
+
+if (!pathExceptions.includes(window.location.pathname.split('/')[1])) {
+  let bombingCount = 0;
+  const bomb = () => {
+    overrideOverriders();
+    changeTheme();
+    injectUI();
+    if (bombingCount++ < bombingLimit) {
+      setTimeout(bomb, 100);
+    }
   };
-  overrideOverriders();
+  setTimeout(bomb, 0);
+  setInterval(overrideOverriders, 600);
+  setInterval(injectUI, 2000);
+  setInterval(setButtonClickListeners, 2000);
   document.addEventListener('click', overrideOverriders);
+  document.addEventListener('keydown', overrideOverriders);
 }
 
 chrome.storage.sync.get(['color_theme'], (result) => {
@@ -156,5 +182,3 @@ chrome.runtime.onMessage.addListener((request) => {
     changeThemeAnimated();
   }
 });
-
-injectUI();
